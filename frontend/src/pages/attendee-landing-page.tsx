@@ -51,7 +51,7 @@ const AttendeeLandingPage: React.FC = () => {
     }
 
     try {
-      setPublishedEvents(await searchPublishedEvents(query, page));
+      setPublishedEvents(await searchPublishedEvents(query ?? "", page));
     } catch (err) {
       if (err instanceof Error) {
         setError(err.message);
@@ -116,7 +116,7 @@ const AttendeeLandingPage: React.FC = () => {
             <div className="flex gap-2 max-w-lg">
               <Input
                 className="bg-white text-black"
-                value={query}
+                value={query ?? ""}
                 onChange={(e) => setQuery(e.target.value)}
               />
               <Button onClick={queryPublishedEvents}>

@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "format": "prettier . --write",
-    "mocks": "npx json-server db.json",
+    "mocks": "node mock-server.mjs",
     "lint": "eslint .",
     "preview": "vite preview"
   },

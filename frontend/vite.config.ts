@@ -13,18 +13,18 @@ export default defineConfig({
   },
   server: {
     proxy: {
-      // Proxy /api to json-server
-      // "/api": {
-      //   target: "http://localhost:3000",
-      //   changeOrigin: true,
-      //   rewrite: (path) => path.replace(/^\/api\/v1/, ""),
-      // },
-
-      // Proxy /api to Spring Boot
+      // Proxy /api to local mock server (npm run mocks)
       "/api": {
-        target: "http://localhost:8080",
+        target: "http://localhost:3000",
         changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api\/v1/, ""),
       },
+
+      // Proxy /api to Spring Boot (when backend controllers are ready)
+      // "/api": {
+      //   target: "http://localhost:8080",
+      //   changeOrigin: true,
+      // },
     },
   },
 });
