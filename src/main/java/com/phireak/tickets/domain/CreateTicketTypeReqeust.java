@@ -11,10 +11,10 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class CreateTicketType {
+public class CreateTicketTypeReqeust {
     private String name;
     private Double price;
     private String description;
     private Integer totalAvailable;
-    private List<CreateTicketType> ticketType = new ArrayList<>();
+    private List<CreateTicketTypeReqeust> ticketTypes = new ArrayList<>();
 }

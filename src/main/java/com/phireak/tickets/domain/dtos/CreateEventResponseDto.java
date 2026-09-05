@@ -1,18 +1,20 @@
-package com.phireak.tickets.domain;
+package com.phireak.tickets.domain.dtos;
 
-
+import com.phireak.tickets.domain.EventStatusEmnum;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
-public class CreateEventRequest {
+@AllArgsConstructor
+public class CreateEventResponseDto {
+
+    private UUID id;
     private String name;
     private LocalDateTime start;
     private LocalDateTime end;
@@ -20,6 +22,7 @@ public class CreateEventRequest {
     private LocalDateTime salesStart;
     private LocalDateTime salesEnd;
     private EventStatusEmnum status;
-    private User organizer;
-    private List<CreateTicketTypeReqeust> ticketTypes = new ArrayList<>();
+    private List<CreateEventResponseDto> ticketTypes;
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
 }
